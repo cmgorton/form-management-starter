@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Notes from "./components/Notes";
 import NoteForm from "./components/NoteForm";
-//mimic fetching data from an API
-import data from "./data";
 import "./styles.scss";
 
 function App() {
@@ -15,14 +13,6 @@ function App() {
         "Talent is a pursued interest. Anything that you're willing to practice, you can do.― Bob Ross "
     }
   ]);
-  const addNewNote = note => {
-    const newNote = {
-      id: Date.now(),
-      title: note.title,
-      body: note.body
-    };
-    setNotes([...notes, newNote]);
-  };
 
   return (
     <div className="App">
@@ -33,5 +23,7 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById(
+  "root"
+);
 ReactDOM.render(<App />, rootElement);
